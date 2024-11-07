@@ -1,4 +1,12 @@
 {
     "javascript.format.semicolons": "insert",
-    "typescript.format.semicolons": "insert"
+    "typescript.format.semicolons": "insert",
+    "cSpell.words": [
+        "fontawesome",
+        "fortawesome",
+        "iconfont",
+        "iconsets",
+        "materialdesignicons",
+        "vuetify"
+    ]
 }

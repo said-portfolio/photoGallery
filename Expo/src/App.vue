@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue';
 </script>
 
-<template>
+<!--template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
@@ -16,12 +15,46 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div>
   </header>
+</template-->
+<template>
+  <v-card class="mx-auto" color="grey-lighten-3" max-width="448">
+    <v-layout>
+      <v-app-bar color="teal-darken-4" image="https://picsum.photos/1920/1080?random">
+        <template v-slot:image>
+          <v-img gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"></v-img>
+        </template>
 
-  <RouterView />
+        <template v-slot:prepend>
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        </template>
+
+        <v-app-bar-title>Title</v-app-bar-title>
+
+        <v-spacer></v-spacer>
+
+        <NavBar />
+      </v-app-bar>
+
+      <v-main>
+        <v-container fluid>
+
+          <v-row dense>
+            <v-col v-for="n in 4" :key="n" cols="12">
+              <v-card
+                :subtitle="`Subtitle for Content ${n}`"
+                :title="`Content ${n}`"
+                text="Lorem ipsum dolor sit amet consectetur, adipisicing elit.?"
+              ></v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-layout>
+  </v-card>
 </template>
 
-<style scoped>
-header {
+<style scoped lang="scss">
+/*header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -81,5 +114,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+}*/
 </style>
